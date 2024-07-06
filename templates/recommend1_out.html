@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Recommended Data 1</title>
+</head>
+<body>
+    <br>
+    <h1 align="center">Recommended 10 new places</h1>
+    <br>
+
+    <table border="1">
+        <tr>
+            <th> venueID </th>
+            <td> venueName </td>
+            <td> lat </td>
+            <td> lon </td>
+        </tr>
+        {% for each in recommended %}
+        <tr>
+            <th> {{each[0]}} </th>
+            <td> {{each[1]}} </td>
+            <td> {{each[2]}} </td>
+            <td> {{each[3]}} </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>
+

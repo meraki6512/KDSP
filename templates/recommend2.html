@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flask</title>
+</head>
+<body>
+
+</body>
+</html>
+
+
+    <br>
+    <h1 align="center">Recommend 10 similar users</h1>
+    <br>
+    <h4 align = "center">
+    Find the list of top 10 most similar users (i.e. their interests match) in the entire data set for any userID as input.
+    </h4>
+
+    <form align="center" action="/method2" method="POST" enctype="multipart/form-data">
+        <br><br>
+        <h2 align="center">Input UserID (default=1)</h2>
+
+        {% with errors = get_flashed_messages(category_filter=["error"]) %}
+        {% if errors %}
+        <ul>
+            {%- for msg in errors %}
+            <li>{{ msg }}</li>
+            {% endfor -%}
+        </ul>
+        {% endif %}
+        {% endwith %}
+
+        <label for="uid">userID</label><br>
+        <input type="number" id="uid" name="uid" placeholder="Enter UserID (1 to 1083)"> <br><br>
+        <input type="submit" value="OK">
+
+    </form>
+    <br><br><br>
+
+</body>
+</html>

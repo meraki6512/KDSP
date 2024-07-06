@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flask</title>
+</head>
+<body>
+
+</body>
+</html>
+
+    <br>
+    <h1 align="center">Recommend meeting place from 5 users and each location</h1>
+    <br>
+    <h4 align = "center">
+    For a given set of 5 userIDs and their randomly selected locations from data, recommend a place where these 5 people can meet. <br>
+    The recommended place must be relatively close to each one of the 5 userIDs.
+    </h4>
+
+    <form action="/method3" method="POST" enctype="multipart/form-data">
+        <br><br>
+        <h2 align="center"> Input 5 UserIDs & each location (latitude, longitude) </h2>
+
+        {% with errors = get_flashed_messages(category_filter=["error"]) %}
+        {% if errors %}
+        <ul>
+            {%- for msg in errors %}
+            <li>{{ msg }}</li>
+            {% endfor -%}
+        </ul>
+        {% endif %}
+        {% endwith %}
+
+        {{ form.csrf_token() }}
+        {{ form.forms() }}
+        <input align="center" type="submit" value="OK">
+
+    </form>
+    <br><br><br>
+
+</body>
+</html>

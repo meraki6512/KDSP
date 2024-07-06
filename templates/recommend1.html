@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flask</title>
+</head>
+<body>
+
+</body>
+</html>
+
+
+    <br>
+    <h1 align="center">Recommend 10 new places</h1>
+    <br>
+    <h4 align = "center">
+    Recommend a list of 10 unvisited locations for any userID and CatagoryName as input. <br>
+    The new suggested venues must be of similar category to the one given as input.
+    </h4>
+
+    <form align="center" action="/method1" method="POST" enctype="multipart/form-data">
+        <br><br>
+        <h2 align="center">Input UserID (default=1) & CategoryID (default=Bar)</h2>
+
+        {% with errors = get_flashed_messages(category_filter=["error"]) %}
+        {% if errors %}
+        <ul>
+            {%- for msg in errors %}
+            <li>{{ msg }}</li>
+            {% endfor -%}
+        </ul>
+        {% endif %}
+        {% endwith %}
+
+        <label for="uid">userID</label><br>
+        <input type="number" id="uid" name="uid" placeholder="Enter UserID (1 to 1083)"><br>
+
+        <label for="category">CatagoryName</label><br>
+        <input type="text" id="category" name="category" placeholder="Enter CategoryName"><br><br>
+        <input type="submit" value="OK">
+
+    </form>
+    <br><br><br>
+
+</body>
+</html>
